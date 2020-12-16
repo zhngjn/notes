@@ -324,3 +324,30 @@ toString();
 System.out.format("", ...);
 System.out.printf("", ...);
 
+import java.util.Formatter;
+format("", ...);
+
+String.format("", ...);
+
+import java.util.regex.*;
+Pattern p = Pattern.compile("");
+Matcher m = p.matcher("");
+while (m.find()) {
+    m.group(), m.begin(), m.end();
+    m.groupCount(), m.group(i);
+}
+
+BufferedReader input = new BufferedReader(new StringReader(""));
+String line = input.readLine();
+Integer.parseInt("");
+Double.parseDouble("");
+
+Scanner input = new Scanner(new BufferedReader(new StringReader("")));
+input.useDelimiter("");
+input.delimiter(); // Pattern
+input.hasNextLine();
+input.nextLine();
+input.hasNextInt();
+input.nextInt();
+input.nextDouble();
+

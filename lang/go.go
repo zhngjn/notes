@@ -299,3 +299,107 @@ func f(x int, y ...int) {
 	copy(z, y)
 }
 
+// map
+args := make(map[string]int)
+args := map[string]int{}
+
+args := map[string]int{
+	"mon": 1,
+	"tue": 2,
+}
+args["wed"] = 3
+
+delete(args, "wed") // even key does not exist
+
+args["mon"]++ // if key does not exist, create it with zero value
+
+for name, age := range ages {
+
+}
+
+var ages map[string]int
+ages["jun"] = 20 // panic, for ages is nil
+
+if age, ok := ages["jun"]; !ok {
+
+}
+
+// map could only == with nil
+
+import "bufio"
+import "unicode"
+import "unicode/utf8"
+// utf8.UTFMax : max bytes of utf-8
+in := bufio.NewReader(os.Stdin)
+for {
+	rune, nbytes, err := in.ReadRune()
+	if err == io.EOF {
+		break
+	}
+	if err != nil {
+
+	}
+	if rune == unicode.ReplacementChar && nbytes == 1 {
+
+	}
+	// ok 
+}
+
+// struct
+type Person struct {
+	Id int
+	Name string
+	Age int
+	Salary int
+}
+var jun Person
+
+jun.Salary = 1000
+
+salary := &jun.Salary
+*salary += 1000
+
+var me *Person = &jun
+me.Salary += 1000
+(*me).Salary += 1000
+
+// sequence or combination of fields makes different struct
+
+// struct literal
+type Point struct { X, Y int }
+p := Point{1, 2}
+
+// if all fields are (== !=), then the struct is (== !=)
+
+// struct nesting and anonymous field
+type Point struct {
+	X, Y int
+}
+type Circle struct {
+	Point
+	Radius int
+}
+type Wheel struct {
+	Circle
+	Spokes int
+}
+
+var w Wheel
+w.X = 8 // == w.Circle.Point.X = 8
+w.Y = 8 // == w.Circle.Point.Y = 8
+w.Radius = 5 // == w.Circle.Radius = 5
+w.Spokes = 10
+
+// init
+w := Wheel{Circle{Point{8, 8}, 5}, 10}
+
+w := Wheel{
+	Circle: Circle{
+		Point: Point{X: 8, Y: 8}, 
+		Radius: 5,
+	}, 
+	Spokes: 10,
+}
+
+// %v print out object format
+
